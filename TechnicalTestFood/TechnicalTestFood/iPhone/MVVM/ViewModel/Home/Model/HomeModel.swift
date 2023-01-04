@@ -22,30 +22,22 @@ class HomeModel: NSObject {
     }
 
     private var urlSession : DataRequest?
-
-    lazy private var refreshControll: UIRefreshControl! = {
-       var refresh = UIRefreshControl()
-        refresh.tintColor = .darkGray
-        refresh.addTarget(
-            self,
-            action: #selector(self.loadServices),
-            for: .valueChanged
-        )
-        return refresh
-    }()
-
-    private var filterTextController: String?
-
-    private weak var controller: UIViewController!
+    private var filterTextController: String!
+    var page : Int!
+    var statePage : Bool!
+    
+    private weak var controller: UIViewController?
+    private weak var tblFood: UITableView?
 
     var bindEmployeeViewModelToController : Closures.Success = {}
     var errorViewModelToContoller : Closures.ErrorMessage = { _ in }
 
     init(tableView: UITableView,toController: UIViewController,searchBar: UISearchBar) {
         super.init()
-        tableView.backgroundView = self.refreshControll
-        searchBar.delegate = self
+        tblFood = tableView
         controller = toController
+        searchBar.delegate = self
+        page = 1
         loadServices()
     }
 
@@ -60,6 +52,7 @@ extension HomeModel: UISearchBarDelegate {
                 of: " ",
                 with: Constante.textReplacing)
         }
+        self.page = 1
         loadServices()
     }
 }
@@ -67,21 +60,44 @@ extension HomeModel: UISearchBarDelegate {
 extension HomeModel {
     
     @objc private func loadServices(){
-        let data = UIFood(page: "1", search: self.filterTextController ?? "''")
-        self.loadCategorias(data: data)
+        self.loadCategorias(state: false)
     }
     
-    private func loadCategorias(data: UIFood) {
-        refreshControll.beginRefreshing()
+    func loadCategorias(state: Bool) {
+
+        let refreshControll = UIActivityIndicatorView(style: .medium)
+        refreshControll.hidesWhenStopped = true
+        refreshControll.startAnimating()
+        tblFood?.tableFooterView = refreshControll
+
+        let data = UIFood(
+            page: "\(page ?? 0)",
+            search: self.filterTextController ?? Constante.clearText
+        )
+
         urlSession?.suspend()
         urlSession?.cancel()
         urlSession = HomeBL.shared.getCategorias(dicFood: data) { [weak self] foods in
             guard let self = self else { return }
-            self.refreshControll.endRefreshing()
-            self.arrayFoods = foods
+            refreshControll.stopAnimating()
+            
+            self.page += 1
+            
+            if foods.count == 0 {
+                self.page -= 1
+            }
+            
+            if self.page == 1 {
+                self.arrayFoods = foods
+            } else {
+                for food in foods {
+                    self.arrayFoods.append(food)
+                }
+            }
+            
         } errorService: { [weak self] errorMessage in
             guard let self = self else { return }
-            self.refreshControll.endRefreshing()
+            refreshControll.stopAnimating()
             self.errorViewModelToContoller(errorMessage)
         }
     }

@@ -47,9 +47,9 @@ extension HomeViewController {
             toController: self,
             searchBar: foodSearch
         )
-        
+
         homeModel.bindEmployeeViewModelToController = { [weak self] in
-            guard let self = self else { return  }
+            guard let self = self else { return }
             self.loadTableView()
         }
     }
@@ -62,6 +62,11 @@ extension HomeViewController {
         tblFood.delegate = homeModelTable
         tblFood.dataSource = homeModelTable
         tblFood.reloadData()
+
+        homeModelTable.scrollBottom = { [weak self] in
+            guard let self = self else { return }
+            self.homeModel.loadCategorias(state: true)
+        }
     }
     
 }

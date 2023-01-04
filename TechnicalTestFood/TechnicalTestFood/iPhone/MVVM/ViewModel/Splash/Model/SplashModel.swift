@@ -9,7 +9,7 @@ import UIKit
 
 class SplashModel: NSObject {
 
-    private weak var controller: UIViewController!
+    private weak var controller: UIViewController?
     
     var succesSplashToController : Closures.Success = {}
     
@@ -25,7 +25,7 @@ extension SplashModel {
     private func toHomeController() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.succesSplashToController()
-            self.controller.performSegue(
+            self.controller?.performSegue(
                 withIdentifier: Segue.homeViewController,
                 sender: nil
             )

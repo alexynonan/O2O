@@ -290,8 +290,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USp-xe-z43">
-                                        <rect key="frame" x="20" y="260.33333333333331" width="0.0" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USp-xe-z43">
+                                        <rect key="frame" x="20" y="260.33333333333331" width="6.3333333333333321" height="15.666666666666686"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -307,12 +307,12 @@
                                     <constraint firstItem="MLi-Eo-bmo" firstAttribute="leading" secondItem="Nao-yj-jT3" secondAttribute="leading" id="A8t-5q-l8o"/>
                                     <constraint firstItem="Qi6-ay-Dq0" firstAttribute="centerX" secondItem="Nao-yj-jT3" secondAttribute="centerX" id="Bs0-ck-0xg"/>
                                     <constraint firstItem="USp-xe-z43" firstAttribute="top" secondItem="wDv-7O-aJj" secondAttribute="bottom" constant="10" id="MvV-aW-FbT"/>
+                                    <constraint firstAttribute="bottom" secondItem="USp-xe-z43" secondAttribute="bottom" constant="20" id="OqL-bJ-Ybz"/>
                                     <constraint firstItem="MLi-Eo-bmo" firstAttribute="top" secondItem="Nao-yj-jT3" secondAttribute="top" id="Oyw-OP-CnY"/>
                                     <constraint firstItem="7yo-c7-M4r" firstAttribute="centerY" secondItem="Qi6-ay-Dq0" secondAttribute="centerY" id="P4r-ho-wao"/>
                                     <constraint firstItem="USp-xe-z43" firstAttribute="leading" secondItem="wDv-7O-aJj" secondAttribute="leading" id="W6Q-xE-qpE"/>
                                     <constraint firstAttribute="trailing" secondItem="MLi-Eo-bmo" secondAttribute="trailing" id="c4j-46-LTs"/>
                                     <constraint firstItem="wDv-7O-aJj" firstAttribute="leading" secondItem="Nao-yj-jT3" secondAttribute="leading" constant="20" id="eDQ-1R-SbC"/>
-                                    <constraint firstAttribute="bottom" secondItem="USp-xe-z43" secondAttribute="bottom" constant="30" id="pJT-PI-yZR"/>
                                     <constraint firstItem="USp-xe-z43" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="wDv-7O-aJj" secondAttribute="trailing" id="q2e-h0-PDY"/>
                                     <constraint firstAttribute="trailing" secondItem="wDv-7O-aJj" secondAttribute="trailing" constant="20" id="rE5-8h-gMh"/>
                                     <constraint firstItem="Qi6-ay-Dq0" firstAttribute="top" secondItem="MLi-Eo-bmo" secondAttribute="bottom" constant="20" id="vem-oy-T7T"/>

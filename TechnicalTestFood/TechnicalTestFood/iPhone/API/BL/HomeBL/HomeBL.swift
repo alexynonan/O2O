@@ -19,7 +19,7 @@ struct HomeBL {
         errorService: @escaping Closures.ErrorMessage
     ) -> DataRequest? {
 
-        HomeWS.shared.getCategorias(
+        return HomeWS.shared.getCategorias(
             dicFood: dicFood,
             completion: completion,
             errorService: errorService

@@ -23,7 +23,7 @@ struct HomeWS {
             format: WebServicesURL.Home.homeSearchFood,
             arguments: [ dicFood.search,
                          dicFood.page,
-                        "15"]
+                        "20"]
         )
 
         return CSWebservice.sharedInstace.requestType(
