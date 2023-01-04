@@ -1,5 +1,5 @@
-# O2O
-TechnicalTestFood
+# O2O (TechnicalTestFood)
+Install proyect -> pod install 
 
 ## Cocoa Pods Utilizados
 
