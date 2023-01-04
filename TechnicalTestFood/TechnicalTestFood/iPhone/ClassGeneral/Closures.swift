@@ -23,4 +23,7 @@ struct Closures {
     struct Home {
         typealias SuccessFood = (_ foods: [FoodBE]) -> Void
     }
+    struct HomeDetail {
+        typealias SuccessFood = (_ food: FoodBE) -> Void
+    }
 }

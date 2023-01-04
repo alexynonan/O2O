@@ -10,7 +10,13 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet private weak var tblFood: UITableView!
-    @IBOutlet private weak var foodSearch: UISearchBar!
+    @IBOutlet private weak var foodSearch: UISearchBar! {
+        didSet{
+            UITextField.appearance(
+                whenContainedInInstancesOf: [UISearchBar.self]
+            ).textColor = .black
+        }
+    }
 
     private var homeModel: HomeModel!
     private var homeModelTable: HomeModelTableView!
@@ -22,15 +28,14 @@ class HomeViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        homeModel.prepareModel(for: segue, sender: sender)
     }
-    */
 
 }
 
@@ -50,10 +55,10 @@ extension HomeViewController {
     }
 
     private func loadTableView() {
-        homeModelTable = HomeModelTableView(items: homeModel.arrayFoods, completion: { cell, index in
-            
-        })
-        
+        homeModelTable = HomeModelTableView(
+            items: homeModel.arrayFoods,
+            toController: self
+        )
         tblFood.delegate = homeModelTable
         tblFood.dataSource = homeModelTable
         tblFood.reloadData()

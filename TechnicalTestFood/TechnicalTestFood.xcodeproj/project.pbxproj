@@ -29,6 +29,10 @@
 		95EB5A1B296477B6005B74B8 /* HomeBL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB5A1A296477B6005B74B8 /* HomeBL.swift */; };
 		95EB5A1D29648EFA005B74B8 /* HomeModelTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB5A1C29648EFA005B74B8 /* HomeModelTableView.swift */; };
 		95EB5A1F29648F81005B74B8 /* HomeFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB5A1E29648F81005B74B8 /* HomeFoodTableViewCell.swift */; };
+		95EB5A222964B56D005B74B8 /* ExtensionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB5A212964B56D005B74B8 /* ExtensionImage.swift */; };
+		95EB5A242964B936005B74B8 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB5A232964B936005B74B8 /* MessageTableViewCell.swift */; };
+		95EB5A272964D70E005B74B8 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB5A262964D70E005B74B8 /* HomeDetailViewController.swift */; };
+		95EB5A2A2964D756005B74B8 /* HomeDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB5A292964D756005B74B8 /* HomeDetailModel.swift */; };
 		FCED8570B1CC6AC00358C4E0 /* Pods_TechnicalTestFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC5413AD07CDF64D7156BDE /* Pods_TechnicalTestFood.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +62,10 @@
 		95EB5A1A296477B6005B74B8 /* HomeBL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBL.swift; sourceTree = "<group>"; };
 		95EB5A1C29648EFA005B74B8 /* HomeModelTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModelTableView.swift; sourceTree = "<group>"; };
 		95EB5A1E29648F81005B74B8 /* HomeFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFoodTableViewCell.swift; sourceTree = "<group>"; };
+		95EB5A212964B56D005B74B8 /* ExtensionImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionImage.swift; sourceTree = "<group>"; };
+		95EB5A232964B936005B74B8 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		95EB5A262964D70E005B74B8 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
+		95EB5A292964D756005B74B8 /* HomeDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailModel.swift; sourceTree = "<group>"; };
 		CB4E5CF5C75553F1A899B88D /* Pods-TechnicalTestFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechnicalTestFood.debug.xcconfig"; path = "Target Support Files/Pods-TechnicalTestFood/Pods-TechnicalTestFood.debug.xcconfig"; sourceTree = "<group>"; };
 		D7EE2FEC5FD24E820C164484 /* Pods-TechnicalTestFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechnicalTestFood.release.xcconfig"; path = "Target Support Files/Pods-TechnicalTestFood/Pods-TechnicalTestFood.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +192,7 @@
 				95AA6AFE2963895D00E325A6 /* Closures.swift */,
 				95AA6B0029638AE000E325A6 /* MessageAlert.swift */,
 				95EB5A0F29646CFD005B74B8 /* Segues.swift */,
+				95EB5A212964B56D005B74B8 /* ExtensionImage.swift */,
 			);
 			path = ClassGeneral;
 			sourceTree = "<group>";
@@ -204,6 +213,7 @@
 				95EB5A022963EF63005B74B8 /* HomeViewController.swift */,
 				95EB5A2029648FF4005B74B8 /* Cell */,
 				95EB5A052963EF6E005B74B8 /* Model */,
+				95EB5A252964D6EC005B74B8 /* HomeDetail */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -287,8 +297,26 @@
 			isa = PBXGroup;
 			children = (
 				95EB5A1E29648F81005B74B8 /* HomeFoodTableViewCell.swift */,
+				95EB5A232964B936005B74B8 /* MessageTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		95EB5A252964D6EC005B74B8 /* HomeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				95EB5A262964D70E005B74B8 /* HomeDetailViewController.swift */,
+				95EB5A282964D72A005B74B8 /* Model */,
+			);
+			path = HomeDetail;
+			sourceTree = "<group>";
+		};
+		95EB5A282964D72A005B74B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95EB5A292964D756005B74B8 /* HomeDetailModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,16 +436,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95EB5A272964D70E005B74B8 /* HomeDetailViewController.swift in Sources */,
 				95AA6B0129638AE000E325A6 /* MessageAlert.swift in Sources */,
 				95AA6AE829637C0C00E325A6 /* TechnicalTestFood.xcdatamodeld in Sources */,
 				95EB5A1F29648F81005B74B8 /* HomeFoodTableViewCell.swift in Sources */,
 				95EB5A12296472FB005B74B8 /* FoodBE.swift in Sources */,
+				95EB5A242964B936005B74B8 /* MessageTableViewCell.swift in Sources */,
 				95EB5A0729646898005B74B8 /* HomeModel.swift in Sources */,
 				95AA6ADE29637C0C00E325A6 /* AppDelegate.swift in Sources */,
 				95EB5A032963EF63005B74B8 /* HomeViewController.swift in Sources */,
 				95AA6AFC2963889000E325A6 /* CSWebservice.swift in Sources */,
 				95EB5A0B29646BF7005B74B8 /* SplashModel.swift in Sources */,
 				95EB5A19296477AA005B74B8 /* HomeWS.swift in Sources */,
+				95EB5A2A2964D756005B74B8 /* HomeDetailModel.swift in Sources */,
 				95EB5A1029646CFD005B74B8 /* Segues.swift in Sources */,
 				95EB5A1D29648EFA005B74B8 /* HomeModelTableView.swift in Sources */,
 				95AA6AE029637C0C00E325A6 /* SceneDelegate.swift in Sources */,
@@ -425,6 +456,7 @@
 				95AA6AFF2963895D00E325A6 /* Closures.swift in Sources */,
 				95AA6B082963E08F00E325A6 /* WebServicesURL.swift in Sources */,
 				95EB5A0E29646C1A005B74B8 /* SplashViewController.swift in Sources */,
+				95EB5A222964B56D005B74B8 /* ExtensionImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

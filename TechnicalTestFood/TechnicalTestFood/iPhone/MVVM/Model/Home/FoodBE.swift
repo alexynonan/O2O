@@ -17,8 +17,8 @@ struct FoodBE {
 
     init(_ json: JSON? = nil) {
         self.name = json?.dictionary?["name"]?.stringValue ?? ""
-        self.tagline = json?.dictionary?["name"]?.stringValue ?? ""
-        self.description = json?.dictionary?["name"]?.stringValue ?? ""
+        self.tagline = json?.dictionary?["tagline"]?.stringValue ?? ""
+        self.description = json?.dictionary?["description"]?.stringValue ?? ""
         self.image = json?.dictionary?["image_url"]?.stringValue ?? ""
     }
 }
