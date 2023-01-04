@@ -65,7 +65,7 @@ extension HomeViewController {
 
         homeModelTable.scrollBottom = { [weak self] in
             guard let self = self else { return }
-            self.homeModel.loadCategorias(state: true)
+            self.homeModel.loadServices()
         }
     }
     

@@ -59,11 +59,7 @@ extension HomeModel: UISearchBarDelegate {
 
 extension HomeModel {
     
-    @objc private func loadServices(){
-        self.loadCategorias(state: false)
-    }
-    
-    func loadCategorias(state: Bool) {
+    func loadServices() {
 
         let refreshControll = UIActivityIndicatorView(style: .medium)
         refreshControll.hidesWhenStopped = true
